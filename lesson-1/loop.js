@@ -14,9 +14,11 @@ const loop = function(times = 0, callback = null) {
 
 module.exports = loop;
 
-// Usage Examples
+
+/* Example
 let i = 0;
 loop(5, () => i++);
 console.log(i); // 5
 
 loop(5); // nothing happens
+*/

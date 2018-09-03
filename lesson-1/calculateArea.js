@@ -48,8 +48,9 @@ const calculateArea = function(figure, paramA = 0, paramB = 0, paramC = 0) {
 
 module.exports = calculateArea;
 
-console.log(
-    calculateArea('square', 5),
-    calculateArea('circle', 10),
-    calculateArea('triangle', 7, 5.9, 3.2)
-);
+
+/* Example
+console.log(calculateArea('square', 5));
+console.log(calculateArea('circle', 10));
+console.log(calculateArea('triangle', 7, 5.9, 3.2));
+*/
