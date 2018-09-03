@@ -24,6 +24,17 @@ class Employee extends Human {
 class Manager extends Employee { 
     constructor(name, age, dateOfBirth, salary, department) {
         super(name, age, dateOfBirth, salary, department);
+        this.developers = [];
+    }
+    addDeveloper(developer) {
+        if (developer instanceof Developer) {
+            this.developers.push(developer);
+        }
+    }
+    removeDeveloper(developer) {
+        if (developer instanceof Developer) {
+            this.developers.splice(this.developers.indexOf(developer), 1);
+        }
     }
 }
 
@@ -39,4 +50,17 @@ class Developer extends Employee {
     }
 }
 
-let Vasya = new Developer('Vasiliy', 25, '20-10-1994', 50000, 'frontend');
+// Example
+let petya = new Manager('Petya', 35, 2071983, 100000, 'personal lines');
+let vasya = new Developer('Vasiliy', 25, '20-10-1994', 50000, 'frontend', petya);
+let misha = new Developer('Mikhail', 25, '20-10-1994', 50000, 'frontend', petya);
+petya.addDeveloper(vasya);
+petya.addDeveloper(misha);
+
+console.log(petya.developers);
+
+petya.removeDeveloper(misha);
+
+console.log(petya.developers);
+console.log(misha.displayInfo());
+console.log(petya.displayInfo());
