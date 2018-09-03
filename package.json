@@ -1,0 +1,24 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "hometasks of react geekbrains course",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikhailLoginov/react.git"
+  },
+  "keywords": [
+    "react",
+    "geekbrains",
+    "learning"
+  ],
+  "author": "Mikhail Loginov shadoww2131@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MikhailLoginov/react/issues"
+  },
+  "homepage": "https://github.com/MikhailLoginov/react#readme"
+}
