@@ -16,6 +16,15 @@ class Employee extends Human {
         this.salary = (typeof salary == "number") ? salary : 0;
         this.department = (typeof department == "string") ? department : "";
     }
+    displayInfo() {
+        return `${super.displayInfo()}, salary: ${this.salary}, department: ${this.department}`;
+    }
+}
+
+class Manager extends Employee { 
+    constructor(name, age, dateOfBirth, salary, department) {
+        super(name, age, dateOfBirth, salary, department);
+    }
 }
 
 class Developer extends Employee {
@@ -30,8 +39,4 @@ class Developer extends Employee {
     }
 }
 
-class Manager extends Employee { 
-    constructor(name, age, dateOfBirth, salary, department, manager) {
-        super(name, age, dateOfBirth, salary, department);
-    }
-}
+let Vasya = new Developer('Vasiliy', 25, '20-10-1994', 50000, 'frontend');
