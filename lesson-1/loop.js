@@ -1,5 +1,22 @@
 const loop = function(times = 0, callback = null) {
-  for (let i = 0; i<times; i++) {
-    return loop(times-1, loop(times-1, callback));
+  if (times < 0 || typeof times != "number" || times != Math.floor(times)) {
+    throw Error('first argument wrong format')
+  }
+  if (callback) {
+    if (typeof callback != "function") {
+      throw Error('second argument must be a function')
+    }
+    for (let i = 0; i<times; i++) {
+      callback();
+    }
   }
 }
+
+module.exports = loop;
+
+// Usage Examples
+let i = 0;
+loop(5, () => i++);
+console.log(i); // i == 5
+
+loop(5); // nothing happens
