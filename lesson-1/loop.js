@@ -17,6 +17,6 @@ module.exports = loop;
 // Usage Examples
 let i = 0;
 loop(5, () => i++);
-console.log(i); // i == 5
+console.log(i); // 5
 
 loop(5); // nothing happens
