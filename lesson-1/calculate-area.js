@@ -46,8 +46,6 @@ const calculateArea = function(figure, paramA = 0, paramB = 0, paramC = 0) {
     }
 }
 
-module.exports = calculateArea;
-
 
 /*
 // Example

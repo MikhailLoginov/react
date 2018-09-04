@@ -81,17 +81,12 @@ class Developer extends Employee {
         this.manager = manager;
     }
     setManager(manager) {
-        if (manager instanceof Manager) {
+        if ( !(manager instanceof Manager)) {
             throw Error('Setting manager must be instance of Manager');
         }
         this.manager = manager;
     }
 }
-
-module.exports.Human = Human;
-module.exports.Employee = Employee;
-module.exports.Manager = Manager;
-module.exports.Developer = Developer;
 
 
 /*

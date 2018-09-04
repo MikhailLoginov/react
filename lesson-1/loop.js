@@ -12,8 +12,6 @@ const loop = function(times = 0, callback = null) {
   }
 }
 
-module.exports = loop;
-
 
 /*
 // Example

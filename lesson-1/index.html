@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson 1</title>
+  <link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" />
+</head>
+<body>
+  <button id="tests" onclick="mocha.run(); document.querySelector('#tests').style.display = 'none'" 
+    style="width: 150px; height: 30px; margin: 50px 100px;">Run tests</button>
+  <button onclick="questionnaire();" 
+    style="width: 150px; height: 30px; margin: 50px 100px;">Task 4</button>
+  <div id="mocha"></div>
+  
+  <script src="https://unpkg.com/chai/chai.js"></script>
+  <script src="https://unpkg.com/mocha@5.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd')
+  </script>
+
+  <script src="loop.js"></script>
+  <script src="../test/loop.test.js"></script>
+  <script src="calculate-area.js"></script>
+  <script src="../test/calculate-area.test.js"></script>
+  <script src="hierarchy.js"></script>
+  <script src="../test/hierarchy.test.js"></script>
+  <script src="questionnaire.js"></script>
+  <script src="../test/questionnaire.test.js"></script>
+  <script src="promises.js"></script>
+  <script src="../test/promises.test.js"></script>
+
+  <script>
+    mocha.checkLeaks();
+  </script>
+</body>
+</html>

@@ -1,34 +1,31 @@
-const assert = require('chai').assert;
-const loop = require('../lesson-1/loop.js');
-
-describe('Function loop', () => {
+describe('Task 1: function loop', () => {
     it('6 loops of adding 3 to -4 equals 14', () => {
         let i = -4;
         loop(6, () => i+=3);
-        assert.equal(i, 14);
+        chai.assert.equal(i, 14);
     });
-    it('if function doesn\'t pass, nothing happens', () => {
+    it('If function has not beeing passed, nothing happens', () => {
         try {
            loop(432);
         } catch (err) {
-            assert.notExists(err);
+            chai.assert.notExists(err);
         }
     });
-    it('first argument must be a number, second argument must be a function', () => {
+    it('First argument must be a number, second argument must be a function', () => {
         try {
             loop('string', () => 1);
         } catch (err) {
-            assert.include(err.message, 'first argument wrong format');
+            chai.assert.include(err.message, 'first argument wrong format');
         }
         try {
             loop(-3, () => 1);
         } catch (err) {
-            assert.include(err.message, 'first argument wrong format');
+            chai.assert.include(err.message, 'first argument wrong format');
         }
         try {
             loop(51, 7);
         } catch (err) {
-            assert.include(err.message, 'second argument must be a function');
+            chai.assert.include(err.message, 'second argument must be a function');
         }
     });
 })
