@@ -30,5 +30,5 @@ describe('Function loop', () => {
         } catch (err) {
             assert.include(err.message, 'second argument must be a function');
         }
-    })
+    });
 })

@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const calculateArea = require('../lesson-1/calculateArea.js');
+const calculateArea = require('../lesson-1/calculate-area.js');
 
 describe('Function calculateArea', () => {
     it('Returns an object with specified fields', () => {
@@ -8,7 +8,7 @@ describe('Function calculateArea', () => {
         assert.exists(result.area);
         assert.exists(result.figure);
         assert.exists(result.input);
-    })
+    });
     it('Square area calculation', () => {
         assert.equal(calculateArea('square', 7).area, 49);
     });
@@ -37,5 +37,5 @@ describe('Function calculateArea', () => {
         } catch (err) {
             assert.include(err.message, "unknown");
         }
-    })
+    });
 })

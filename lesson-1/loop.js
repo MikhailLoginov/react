@@ -15,7 +15,8 @@ const loop = function(times = 0, callback = null) {
 module.exports = loop;
 
 
-/* Example
+/*
+// Example
 let i = 0;
 loop(5, () => i++);
 console.log(i); // 5

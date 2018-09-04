@@ -94,7 +94,8 @@ module.exports.Manager = Manager;
 module.exports.Developer = Developer;
 
 
-/* Example
+/*
+// Example
 let petya = new Manager('Petya', 35, 2071983, 100000, 'personal lines');
 let vasya = new Developer('Vasiliy', 25, '20-10-1994', 50000, 'frontend', petya);
 let misha = new Developer('Mikhail', 25, '20-10-1994', 50000, 'frontend', petya);
