@@ -6,13 +6,9 @@ let infoNames = ['name', 'age', 'email', 'feedback'];
 let generator = questionnaire(infoNames),
     state = {};
 
-console.log(state);
-
-    while (!(state.done)) {  
-        state = generator.next();
-    }
-
-console.log(state);
+while (!(state.done)) {  
+    state = generator.next();
+}
 
 function* questionnaire(infoNames) {
     
@@ -51,6 +47,7 @@ function* questionnaire(infoNames) {
 
 */
 
+
 (function questionnaire() {
     
     // Change this Array as you wish
@@ -63,18 +60,13 @@ function* questionnaire(infoNames) {
 
     let generator = questionGen(infoNames),
         chunkString = "",
-        i = 0,
         result = {},
-        state = {},
-        firstIteration = true;
+        state = {};
 
     function* questionGen(infoNames) {
-        // First iteration only; there is no info to gather yet
-        while (firstIteration) {
-            firstIteration = false;
-            console.log(`write your ${infoNames[i]}: `);
-            yield i;
-        }
+        let i = 0;
+        console.log(`write your ${infoNames[i]}: `);
+        yield i;
         // Continuing if there are more fields exists
         while (infoNames[i+1]) {
             result[infoNames[i++]] = chunkString;
