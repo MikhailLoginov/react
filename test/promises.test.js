@@ -1,22 +1,28 @@
 describe('Task 5: function promises', () => {
+  let defaultLog;
 
-  let resp = "";
-
-  it('Function prints an array of 10 items', async () => {
+  it('Function prints an array of 10 items', () => {
+    defaultLog = console.log;
     console.log = function(res) {
-      resp = res;
       chai.assert.isArray(res);
       chai.assert.equal(res.length, 10);
     }
-    await tenPromises();
+    tenPromises();
   });
   it('Responses are from URL "https://jsonplaceholder.typicode.com/users/"', () => {
-    chai.assert.include(resp[2].url, "jsonplaceholder.typicode");
-    chai.assert.exists(resp[8].type);
+    console.log = function(res) {
+      chai.assert.include(res[2].url, "jsonplaceholder.typicode");
+      chai.assert.exists(res[8].type);
+    }
+    tenPromises();
   });
   it('Users numbers are from 1 to 10', () => {
-    chai.assert.include(resp[0].url, "users/1");
-    chai.assert.include(resp[3].url, "users/4");
-    chai.assert.include(resp[9].url, "users/10");
+    console.log = function(res) {
+      chai.assert.include(res[0].url, "users/1");
+      chai.assert.include(res[3].url, "users/4");
+      chai.assert.include(res[9].url, "users/10");
+    }
+    tenPromises();
+    console.log = defaultLog;
   })
 })

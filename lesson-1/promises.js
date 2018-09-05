@@ -1,11 +1,12 @@
-const tenPromises = async function() {
+const tenPromises = function() {
     let promises = [];
 
     for (let i = 0; i < 10; i++) {
-        promises[i] = await fetch(`https://jsonplaceholder.typicode.com/users/${i+1}`);
+        promises[i] = fetch(`https://jsonplaceholder.typicode.com/users/${i+1}`);
     };
-    
-    console.log(promises);
+    Promise.all(promises).then( res => {
+        console.log(res);
+    });
 };
 
 tenPromises();
