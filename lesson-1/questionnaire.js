@@ -13,7 +13,7 @@ const questionnaire = function() {
         let i = 0;
         while (questionFields[i]) {
             let answer = prompt(`Enter your ${questionFields[i]}`);
-            if (answer != "" && answer != null) {
+            if (answer != '' && answer != null) {
                 result[questionFields[i]] = answer;
                 yield i++;
             }

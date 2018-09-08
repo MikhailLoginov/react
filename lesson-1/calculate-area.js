@@ -6,10 +6,10 @@
  * { area: calculated area, figure: specified figure, input: specified values of your figure }
  */
 const calculateArea = function(figure, paramA = 0, paramB = 0, paramC = 0) {
-    if (typeof figure != "string") {
+    if (typeof figure != 'string') {
         throw Error('first parametr must be a string')
     }
-    if (typeof paramA != "number" || typeof paramB != "number" || typeof paramC != "number") {
+    if (typeof paramA != 'number' || typeof paramB != 'number' || typeof paramC != 'number') {
         throw Error('input values must be numbers');
     }
     if (paramA < 0 || paramB < 0 || paramC < 0) {

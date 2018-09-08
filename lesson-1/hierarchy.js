@@ -1,18 +1,19 @@
 class Human {
     constructor(name, age, dateOfBirth) {
-        if (typeof name != "string") {
+        if (typeof name != 'string') {
             throw Error('Name must be a string');
         }
         if (typeof age != "number" || age < 0) {
             throw Error('Age must be a number and not less than zero');
         }
-        if (typeof dateOfBirth != "number" && typeof age != "number") {
+        if (typeof dateOfBirth != 'number' && typeof age != 'number') {
             throw Error('DateOfBirth must be a number or a string');
         }
         this.name = name;
         this.age = age;
         this.dateOfBirth = dateOfBirth;
     }
+
     displayInfo() {
         return `name: ${this.name}, age: ${this.age}, date of birth: ${this.dateOfBirth}`;
     }
@@ -20,10 +21,10 @@ class Human {
 
 class Employee extends Human {
     constructor(name, age, dateOfBirth, salary, department) {
-        if (typeof salary != "number" || salary < 0) {
+        if (typeof salary != 'number' || salary < 0) {
             throw Error('Salary must be a number and not less than zero');
         }
-        if (typeof department != "string") {
+        if (typeof department != 'string') {
             throw Error('Department must be a string');
         }
         try {
@@ -34,6 +35,7 @@ class Employee extends Human {
         this.salary = salary;
         this.department = department;
     }
+
     displayInfo() {
         return `${super.displayInfo()}, salary: ${this.salary}, department: ${this.department}`;
     }
@@ -48,6 +50,7 @@ class Manager extends Employee {
         }
         this.developers = [];
     }
+
     addDeveloper(developer) {
         if (!(developer instanceof Developer)) {
             throw Error('Adding developer must be instance of Developer');
@@ -57,6 +60,7 @@ class Manager extends Employee {
         }
         this.developers.push(developer);
     }
+
     removeDeveloper(developer) {
         if (!(developer instanceof Developer)) {
             throw Error('Removing developer must be instance of Developer');
@@ -80,6 +84,7 @@ class Developer extends Employee {
         }
         this.manager = manager;
     }
+
     setManager(manager) {
         if ( !(manager instanceof Manager)) {
             throw Error('Setting manager must be instance of Manager');

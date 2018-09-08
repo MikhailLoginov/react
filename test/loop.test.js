@@ -4,6 +4,7 @@ describe('Task 1: function loop', () => {
         loop(6, () => i+=3);
         chai.assert.equal(i, 14);
     });
+
     it('If function has not beeing passed, nothing happens', () => {
         try {
            loop(432);
@@ -11,6 +12,7 @@ describe('Task 1: function loop', () => {
             chai.assert.notExists(err);
         }
     });
+    
     it('First argument must be a number, second argument must be a function', () => {
         try {
             loop('string', () => 1);

@@ -1,9 +1,9 @@
 const loop = function(times = 0, callback = null) {
-  if (times < 0 || typeof times != "number" || times != Math.floor(times)) {
+  if (times < 0 || typeof times != 'number' || times != Math.floor(times)) {
     throw Error('first argument wrong format')
   }
   if (callback) {
-    if (typeof callback != "function") {
+    if (typeof callback != 'function') {
       throw Error('second argument must be a function')
     }
     for (let i = 0; i<times; i++) {
